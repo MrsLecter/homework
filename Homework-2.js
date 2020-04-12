@@ -1,3 +1,4 @@
+"use strict"
 /*
 let string1 = 'Ytube';
 let string2 = 'ou';
@@ -30,7 +31,7 @@ function fizzBuzz(param){
             answ += 'Buzz';
         }
         if( ((param%3!=0)&&(param%5!=0)) ){
-            return n;
+            return param;
         }
         return answ;
     
@@ -45,10 +46,9 @@ function fizzBuzz(param){
 */
 /*
 function getObj(arg){
-    return obj = {
-        name: arguments[0]
-    }
-    
+    let obj ={};
+    obj.name = arguments[0];    
+    return obj;
 }
 */
 /*
