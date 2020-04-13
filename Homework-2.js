@@ -73,19 +73,11 @@ function getNewObject(obj){
 и элемент массива, и добавляет элемент в конец массива (без метода push)
 */
 /*
-function toPushElem(arg1, arg2){
-    if((arg1 === undefined)||(arg2  === undefined)){
-        return "contains undefined argument!";
-    }else{
-        if(Array.isArray(arg1)){
-            arg1[arg1.length] = arg2;
-            return arg1;
-        }else if(Array.isArray(arg2)){
-            arg2[arg2.length] = arg1;
-            return arg2;
-        }
-    }
-    
+function toPushElem(array, arg){
+    if(!Array.isArray(array)) return "first must be array!";
+    if(!arg) return "write item!";
+    array[array.length] = arg;
+    return array;
 };
 */
 /*
