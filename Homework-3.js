@@ -113,8 +113,40 @@ const todos = [
         return detected;
     } 
  }
+
+ /*
+* @param {Boolean} completed
+* completed - true или false
+* функция выполняет для всех задач: выолнено или не выполнено согласно параметра completed
+@return {Array} Измененный массив
+*
+*/
+function toggleTodos(completed) {
+    if(completed==true || completed==false){
+        for(let i = 0; i < todos.length; i++){
+            todos[i].completed = completed;
+        }
+        return  todos;
+    }else{
+        return 'invalid argument';
+    }
+}
  
- //console.log(todos)
+
+
+/*
+* функция удаляет из массива все выполненые задачи
+* @return {Array} Измененный массив
+*/
+function clearCompletedTodos() {
+    for(let i =0; i  <  todos.length; i++){
+        if(todos[i].completed == true){
+            todos.splice(i, 1);
+        }
+    }
+    return todos;
+}
+
  console.log('add');
  console.log(addTodo("Телефон", "Позвонить в 12:15"));
  console.log(addTodo("Телефон", "Пополнить счет"));
@@ -135,3 +167,7 @@ console.log('Показать все невыполненные записи');
 console.log(filterTodos('active'));
 console.log('Показать все записи с заголовком \"Работа\"');
 console.log(searchTodos("Ра"));
+console.log('Показать все выполненные записи');
+console.log(filterTodos('completed'));
+console.log('Удалить выполненные задачи');
+console.log(clearCompletedTodos());
