@@ -22,22 +22,15 @@ console.log(sentence) // --> собрать предложение
 */
 /*
 function fizzBuzz(param){
-    if(!isNaN(parseInt(param ,10))){
-        let answ = '';
-        if(param%3 == 0){
-            answ += 'Fizz';
-        }
-        if(param%5 == 0){
-            answ += 'Buzz';
-        }
-        if( ((param%3!=0)&&(param%5!=0)) ){
-            return param;
-        }
-        return answ;
-    
-    }else{
-        return 'Incorrect input';
+    if (param % 3 == 0 && param % 5==0){
+        return 'FizzBuzz';
+    }else if( param%3 == 0){
+        return 'Fizz';
+    }else if(param%5==0){
+         return 'Buzz';
     }
+       
+    return param;
 }
 */
 /*
