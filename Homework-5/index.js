@@ -17,8 +17,10 @@ function getLocationByUserId(userId) {
     let locationUser = {};
     for(let user of users){
         if((user._id).localeCompare(userId)){
-            locationUser.lat = user.latitude;
-            locationUser.long = user.longitude;
+            locationUser = {
+                lat : user.latitude,
+                long : user.longitude,
+            };
         }
     }
     return locationUser;
@@ -47,10 +49,7 @@ function mapOrderList(fruits) {
  * Вывести список пронумерованных фруктов, только 3 символа каждого фрукта ['1. ban', '2. app' ...]
  */
 function mapFruitsWithCount(fruits) {
-   return fruits.map(function(item, index){
-       return `${index+1}. ` + item.substring(0, 3);
-   });
-
+   return fruits.map((item, index) => `${index+1}. ` + item.substring(0, 3));
 }
 // console.log(mapFruitsWithCount(fruits));
 // ------------------------------------------------------------------------------------------------
@@ -76,9 +75,7 @@ function mapFruitsByVowels(fruits, vowels) {
  * @return {Array} companyList       Список компаний
  */
 function getCompanyList(users) {
-    return users.map(function(item){
-         return item.company;
-    });
+    return users.map((item) => item.company);
 }
 // console.log(getCompanyList(users));
 // ------------------------------------------------------------------------------------------------
@@ -105,9 +102,32 @@ function getUniqueFavoriteFruits(users) {
  * @return {Array} uniqueFavoriteFruits      Сортированный список пользователей по значению свойства
  */
 
+ //массив отсортированных свойств создан сразу
 function sortUsersByField(field) {
-   return users.sort(function(a,b){
-       return  ((a[field]).localeCompare(b[field]));
+    let item = users[0];
+    let f = item[field];
+    let newArr = users.sort(function(a, b){
+        if(a[field] > b[field]){
+            return 1;
+        }
+        if(a[field] < b[field]){
+            return -1;
+        }
+        return 0;
+        });
+    if (typeof f == typeof true){
+        return newArr.reverse().map(function(item){
+            return item[field];
+        });  
+    }else{
+        return newArr.map(function(item){
+        return item[field];
     });
+    }
 }
-// console.log(sortUsersByField('_id'));
+// console.log('age:');
+// console.log(sortUsersByField('age'));
+// console.log('isActive:');
+// console.log(sortUsersByField('isActive'));
+// console.log('name:');
+// console.log(sortUsersByField('name'));
