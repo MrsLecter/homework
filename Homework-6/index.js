@@ -33,7 +33,7 @@ module.exports.getAverangeUsers = getAverangeUsers;
 */
 
 let getActiveUsers = function(arr) {
-    return arr.filter(item => item.isActive == true);
+    return arr.filter(item => item.isActive);
 }
 // console.log(getActiveUsers(users));
 module.exports.getActiveUsers = getActiveUsers;
@@ -63,9 +63,18 @@ module.exports.getUsersGender = getUsersGender;
 * @return {Number} - возраст самого старшего пользователя
 */
 
-let getOldestUser = function (arr) {
+let getOldestUser = function(arr) {
+    /*
     let ages = arr.sort(function(a, b){  return a.age - b.age;});
     return ages[ages.length-1].age;
+    */
+   let a = 0;
+   arr.forEach((item) => {
+        if(item.age > a){
+             a = item.age;
+        }
+   });
+    return a;
 }
 //  console.log(getOldestUser(users));
 module.exports.getOldestUser = getOldestUser;
@@ -77,10 +86,20 @@ module.exports.getOldestUser = getOldestUser;
 * @return {Number} - возраст самого младшего пользователя
 */
 
-let getYoungestUser =  function (arr) {
+let getYoungestUser = function(arr) {
+    /*
     let ages = arr.sort(function(a, b){  return a.age - b.age;});
     return ages[0].age;
+    */
+   let a = 100;
+   arr.forEach((item) => {
+        if(item.age < a){
+             a = item.age;
+        }
+   });
+    return a;
 }
+
 // console.log(getYoungestUser(users));
 module.exports.getYoungestUser = getYoungestUser;
 // ------------------------------------------------------------------------------------------------
@@ -93,6 +112,7 @@ module.exports.getYoungestUser = getYoungestUser;
 */
 
 let sortUsersByAge = function (order, arr) {
+    /*
     let newArr = map(arr, function(item){
         return item;
     });
@@ -116,8 +136,18 @@ let sortUsersByAge = function (order, arr) {
         }
     }
     return newArr;
-    
+    */
+    if(order === 'asc'){
+        return users.sort(function(a, b) {
+            return a.age - b.age;
+          });
+    }else if(order === 'desc'){
+            return users.sort(function(a, b) {
+                return b.age - a.age;
+              });
+    }
 }
+
 module.exports.sortUsersByAge = sortUsersByAge;
 /*
 console.log(sortUsersByAge('asc', users));
