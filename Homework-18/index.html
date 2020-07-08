@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <form class="needs-validation" novalidate>
+      <div class="form-group">
+        <label>Name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          minlength="10"
+          data-pattern="name"
+          placeholder="Ivan Petrov"
+          value="Ivan"
+          data-valid="toCheckName"
+        />
+        <div class="invalid-feedback">Please choose a name.</div>
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input
+          type="tel"
+          class="form-control"
+          data-mask="+38(000)-000-00-00"
+          data-pattern="phone"
+          name="phone"
+          placeholder="+38(000)-000-00-00"
+          data-valid="toCheckPhone"
+          value="+38(000)-000-00-00"
+          maxlength="18"
+        />
+        <div class="invalid-feedback">Incorrect phone number.</div>
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="form-group">
+        <label>Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          data-pattern="email"
+          name="email"
+          placeholder="name@example.com"
+          value="email@email.com"
+          data-valid="toCheckEmail"
+        />
+        <div class="invalid-feedback">Incorrect e-mail.</div>
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input
+          type="password"
+          class="form-control"
+          data-pattern="password"
+          name="password"
+          placeholder="Password"
+          value="12345678"
+          data-valid="toCheckPassword"
+          maxlength="15"
+        />
+        <div class="invalid-feedback">8 to 15 characters
+          uppercase and one lowercase letter</div>
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+<!--
+    <h3 class="mt-5">Valid example</h3>
+    <hr class="mb-3" />
+
+    <form>
+      <div class="form-group">
+        <label>Name</label>
+        <input
+          type="name"
+          class="form-control is-invalid"
+          data-valid="pattern-1"
+          placeholder="Ivan Petrov"
+        />
+        <div class="invalid-feedback">Please choose a name.</div>
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input
+          type="tel"
+          class="form-control is-valid"
+          data-valid="pattern-2"
+          placeholder="+38(000)-000-00-00"
+          value="+38(000)-000-00-00"
+        />
+        <div class="invalid-feedback">Incorrect phone number.</div>
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="form-group">
+        <label>Email address</label>
+        <input
+          type="email"
+          class="form-control is-invalid"
+          data-valid="pattern-3"
+          placeholder="name@example.com"
+          value="email@"
+        />
+        <div class="invalid-feedback">Incorrect e-mail.</div>
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input
+          type="password"
+          class="form-control is-valid"
+          data-valid="pattern-4"
+          placeholder="Password"
+          value="12345678"
+        />
+        <div class="invalid-feedback">Minimum 8 characters</div>
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  -->
+    
+    <script src="https://unpkg.com/imask"></script>
+    <script src="src/index.js"></script>
+  </body>
+</html>
