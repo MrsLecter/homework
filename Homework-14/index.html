@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Todo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="todoapp">
+      <header class="header">
+        <h1>todos</h1>
+        <input class="new-todo" placeholder="What needs to be done?" />
+      </header>
+      <section class="main">
+        <input id="toggle-all" class="toggle-all" type="checkbox" />
+        <label for="toggle-all">Mark all as complete</label>
+        <ul class="todo-list">
+          <li>
+            <div class="view">
+              <input class="toggle" type="checkbox" data-todo="toggle" /><label
+                data-id="1"
+                >Todo 1</label
+              ><button data-todo="delete" class="destroy"></button>
+            </div>
+            <input type="text" class="edit" value="Todo 1" />
+          </li>
+          <li class="completed">
+            <div class="view">
+              <input
+                class="toggle"
+                type="checkbox"
+                data-todo="toggle"
+                checked
+              /><label data-id="2">Todo 2</label
+              ><button data-todo="delete" class="destroy"></button>
+            </div>
+            <input type="text" class="edit" value="Todo 2" />
+          </li>
+          <li>
+            <div class="view">
+              <input class="toggle" data-todo="toggle" type="checkbox" /><label
+                data-id="3"
+                >Todo 3</label
+              ><button data-todo="delete" class="destroy"></button>
+            </div>
+            <input type="text" data-todo="edit" class="edit" value="Todo 3" />
+          </li>
+        </ul>
+      </section>
+      <footer class="footer">
+        <span class="todo-count"><strong>2</strong> items left</span>
+        <ul class="filters">
+          <li>
+            <a data-todo="filter" data-filter='"all"' href="/" class="selected"
+              >All</a
+            >
+          </li>
+          <li>
+            <a data-todo="filter" data-filter='"active"' href="/active"
+              >Active</a
+            >
+          </li>
+          <li>
+            <a data-todo="filter" data-filter='"completed"' href="/completed"
+              >Completed</a
+            >
+          </li>
+        </ul>
+        <button data-todo="clear-completed" class="clear-completed">
+          Clear completed
+        </button>
+      </footer>
+    </section>
+    <script src="index.js"></script>
+  </body>
+</html>
