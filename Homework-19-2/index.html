@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Todo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="todoapp">
+      <header class="header">
+        <h1>todos</h1>
+        <input class="new-todo" placeholder="Введите количество taskов" />
+      </header>
+      <section class="main">
+        <ul class="todo-list">
+        </ul>
+      </section>
+      <footer class="footer">
+        <ul class="filters">
+          <li>
+            <a data-filter="all" href="/" class="selected">All</a>
+          </li>
+          <li>
+            <a data-filter="active" href="/active">Active</a>
+          </li>
+          <li>
+            <a data-filter="completed" href="/completed">Completed</a>
+          </li>
+        </ul>
+      </footer>
+    </section>
+    <script src="index.js"></script>
+  </body>
+</html>
